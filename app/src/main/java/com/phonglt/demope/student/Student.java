@@ -3,18 +3,53 @@ package com.phonglt.demope.student;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import com.phonglt.demope.subject.Subject;
+
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.ZoneOffset;
 
 @Entity(tableName = "student")
-public class Student {
+public class Student implements Serializable {
     @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
     private String name;
     private long date;
+    private boolean gender;
+    private double salary;
+    private String address;
+    private int idNganh;
+
+    @Ignore
+    private Subject subject;
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getIdNganh() {
+        return idNganh;
+    }
+
+    public void setIdNganh(int idNganh) {
+        this.idNganh = idNganh;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
 
     public long getDate() {
         return date;
@@ -24,8 +59,7 @@ public class Student {
         this.date = date;
     }
 
-    private boolean gender;
-    private double salary;
+
 
     public Student() {
     }

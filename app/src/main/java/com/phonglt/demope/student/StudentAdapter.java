@@ -48,7 +48,7 @@ public class StudentAdapter extends BaseAdapter {
         TextView txtName = (TextView) view.findViewById(R.id.stu_name);
         TextView txtDob = (TextView) view.findViewById(R.id.dob);
         TextView txtGender = (TextView) view.findViewById(R.id.stu_gender);
-        TextView txtSalary = (TextView) view.findViewById(R.id.stu_salary);
+//        TextView txtSalary = (TextView) view.findViewById(R.id.s);
         ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
         Student student = students.get(position);
         txtName.setText(student.getName());
